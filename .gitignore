@@ -1,0 +1,6 @@
+# Models
+*.h5
+*.keras
+
+# Datasets
+backend/Dataset/
