@@ -37,6 +37,9 @@ async def health() -> dict:
         "labels_path": str(LABELS_PATH),
         "model_loaded": model_service.weights_loaded,
         "classes": model_service.class_names,
+        "expected_classes": len(model_service.class_names),
+        "model_output_classes": model_service.output_classes,
+        "loaded_model_path": model_service.model_path,
     }
 
 
