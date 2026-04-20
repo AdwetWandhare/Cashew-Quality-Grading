@@ -259,7 +259,7 @@ function App() {
       {/* ── Top nav ── */}
       <header className="hero-panel">
         <div className="hero-brand">
-          <div className="hero-emblem">C</div>
+          <img src="/logo512.jpg" alt="Cashew App Logo" className="hero-emblem" />
           <h1>Cashew Quality Analytics and Grading System</h1>
         </div>
         <div className="hero-copy">
