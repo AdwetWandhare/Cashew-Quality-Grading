@@ -170,7 +170,7 @@ The training script can read:
 Open PowerShell in the backend folder:
 
 ```powershell
-cd C:\Users\adwet\Desktop\Cashew_Quality_Grading\backend
+cd C:\Cashew_Quality_Grading\backend
 ```
 
 Install dependencies:
@@ -208,7 +208,7 @@ http://127.0.0.1:8000/health
 Open PowerShell in the frontend folder:
 
 ```powershell
-cd C:\Users\adwet\Desktop\Cashew_Quality_Grading\frontend
+cd C:\Cashew_Quality_Grading\frontend
 ```
 
 Install dependencies:
@@ -240,7 +240,7 @@ node node_modules\react-scripts\bin\react-scripts.js start
 To train the model with the current dataset:
 
 ```powershell
-cd C:\Users\adwet\Desktop\Cashew_Quality_Grading\backend
+cd C:\Cashew_Quality_Grading\backend
 python train.py
 ```
 
@@ -346,7 +346,7 @@ The project includes `Converter.py` for converting a Roboflow COCO split into cl
 Example:
 
 ```powershell
-cd C:\Users\adwet\Desktop\Cashew_Quality_Grading\backend
+cd C:\Cashew_Quality_Grading\backend
 python Converter.py --split valid
 ```
 
@@ -365,7 +365,7 @@ The current training script does not require this conversion for validation and 
 Make sure the backend is running:
 
 ```powershell
-cd C:\Users\adwet\Desktop\Cashew_Quality_Grading\backend
+cd C:\Cashew_Quality_Grading\backend
 python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
