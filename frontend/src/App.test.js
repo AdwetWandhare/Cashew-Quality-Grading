@@ -12,7 +12,7 @@ beforeEach(() => {
         json: async () => ({
           status: 'ok',
           model_loaded: true,
-          classes: ['s0', 's1', 's2'],
+          classes: ['W180', 'W210', 'W300', 'W500'],
         }),
       });
     }
@@ -20,12 +20,13 @@ beforeEach(() => {
     return Promise.resolve({
       ok: true,
       json: async () => ({
-        predicted_grade: 's1',
+        predicted_grade: 'W210',
         confidence: 0.82,
         class_probabilities: {
-          s0: 0.1,
-          s1: 0.82,
-          s2: 0.08,
+          W180: 0.1,
+          W210: 0.82,
+          W300: 0.06,
+          W500: 0.02,
         },
       }),
     });
@@ -36,11 +37,11 @@ afterEach(() => {
   jest.resetAllMocks();
 });
 
-test('renders dashboard heading and backend status', async () => {
+test('renders the updated hero and backend status', async () => {
   render(<App />);
 
-  expect(screen.getByText(/cashew quality analytics and grading system/i)).toBeInTheDocument();
-  await waitFor(() => expect(screen.getByText(/connected/i)).toBeInTheDocument());
+  expect(screen.getByText(/grade every cashew/i)).toBeInTheDocument();
+  await waitFor(() => expect(screen.getByText(/backend online/i)).toBeInTheDocument());
 });
 
 test('runs prediction when a file is selected', async () => {
@@ -52,6 +53,6 @@ test('runs prediction when a file is selected', async () => {
   fireEvent.change(input, { target: { files: [file] } });
   fireEvent.click(screen.getByText(/start grading run/i));
 
-  await waitFor(() => expect(screen.getByTestId('predicted-grade')).toHaveTextContent('s1'));
-  expect(screen.getByTestId('business-band')).toHaveTextContent(/premium range/i);
+  await waitFor(() => expect(screen.getByTestId('predicted-grade')).toHaveTextContent('W210'));
+  expect(screen.getByTestId('business-band')).toHaveTextContent(/jumbo/i);
 });
